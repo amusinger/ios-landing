@@ -158,7 +158,7 @@
       text-align: center;
       color: #561211;
     }
-  
+
     @keyframes title-animation {
       0% {
         opacity: 0;
@@ -258,33 +258,25 @@
           />
         </picture>
       </div>
-      <h3 style="
-        width: 240px;
-        margin: 0 auto;">
+      <h3 style="width: 240px; margin: 0 auto">
         Более <b>1 000</b> салонов красоты и барбершопов
       </h3>
-      <h3 style="
-        margin: 24px auto;
-        width: 290px;">
+      <h3 style="margin: 24px auto; width: 290px">
         Только реальные отзывы и фотографии
       </h3>
-      <h3 style="
-        width: 290px;
-        margin: 0 auto;">
-        Скидки и акции на услуги
-      </h3>
+      <h3 style="width: 290px; margin: 0 auto">Скидки и акции на услуги</h3>
       <h1>Скачивай и записывайся онлайн в два клика</h1>
 
       <div class="promo__btn-group">
-<!--        <img-->
-<!--          id="click_gp"-->
-<!--          onclick="redirect('android')"-->
-<!--          class="promo__image__phone"-->
-<!--          src="/images/google-play.png"-->
-<!--          alt="Приложение zapis для android"-->
-<!--          width="91.62"-->
-<!--          height="27.79"-->
-<!--        />-->
+        <!--        <img-->
+        <!--          id="click_gp"-->
+        <!--          onclick="redirect('android')"-->
+        <!--          class="promo__image__phone"-->
+        <!--          src="/images/google-play.png"-->
+        <!--          alt="Приложение zapis для android"-->
+        <!--          width="91.62"-->
+        <!--          height="27.79"-->
+        <!--        />-->
 
         <img
           id="click_as"
@@ -295,15 +287,15 @@
           width="82.35"
           height="27.79"
         />
-<!--        <img-->
-<!--          id="click_ag"-->
-<!--          onclick="redirect('huawei')"-->
-<!--          class="promo__image__phone"-->
-<!--          src="/images/huawei.png"-->
-<!--          alt="Приложение zapis для huawei"-->
-<!--          width="89.56"-->
-<!--          height="27.79"-->
-<!--        />-->
+        <!--        <img-->
+        <!--          id="click_ag"-->
+        <!--          onclick="redirect('huawei')"-->
+        <!--          class="promo__image__phone"-->
+        <!--          src="/images/huawei.png"-->
+        <!--          alt="Приложение zapis для huawei"-->
+        <!--          width="89.56"-->
+        <!--          height="27.79"-->
+        <!--        />-->
       </div>
       <button class="promo__btn" onclick="redirect('main')" id="mainLink">
         <svg
@@ -338,14 +330,12 @@
     </div>
 
     <script>
+      let mainLink =
+        "https://app.appsflyer.com/id1310410749?pid=(utm_source)&af_siteid=zapis&c=(utm_campaign)&af_channel=(utm_source)&af_c_id={campaign_id}&af_adset={adset_name}&af_adset_id={adset_id}&af_ad={ad_name}&af_ad_id=(ad_id)&af_ad_type=(ad_type)&AGNCY=adexpert&af_click_lookback=7d&clickid={clickid}&advertising_id=(gclid)&os=ios";
 
-      let mainLink = 'https://app.appsflyer.com/id1310410749?pid=(utm_source)&af_siteid=zapis&c=(utm_campaign)&af_channel=(utm_source)&af_c_id={campaign_id}&af_adset={adset_name}&af_adset_id={adset_id}&af_ad={ad_name}&af_ad_id=(ad_id)&af_ad_type=(ad_type)&AGNCY=adexpert&af_click_lookback=7d&clickid={clickid}&advertising_id=(gclid)&os=(ios)';
-
-      deviceType = 'ios';
-      var body;
-      var userId;
-
-
+      deviceType = "ios";
+      let body;
+      let userId;
       let referrer = location.search;
 
       const utmSource = referrer.includes("utm_source")
@@ -379,31 +369,34 @@
             .split("=")[1]
         : "";
 
-      const dynamicParams = ['utm_source', 'utm_campaign', 'campaign_id', 'adset_name', 'adset_id', 'ad_name', 'ad_id', 'ad_type', 'clickid', 'gclid', 'os'];
+      const dynamicParams = [
+        "utm_source",
+        "utm_campaign",
+        "campaign_id",
+        "adset_name",
+        "adset_id",
+        "ad_name",
+        "ad_id",
+        "ad_type",
+        "clickid",
+        "gclid",
+        "os",
+      ];
       referrer = location.search.substring(1);
       for (let i = 0; i < dynamicParams.length; i++) {
-        console.log(dynamicParams[i]);
         const value = referrer.includes(dynamicParams[i])
-                ? referrer.split("&").find((el) => el.includes(dynamicParams[i]))
-                : "";
-        if (value && value.split("=").length) {
-          mainLink = mainLink.replace(`${value.split("=")[0]}`, value.split("=")[1]);
-          // mainLink = mainLink.replace(`{${value.split("=")[0]}}`, value.split("=")[1]);
-          // mainLink = mainLink.replace(`(${value.split("=")[0]})`, value.split("=")[1]);
-          mainLink = mainLink.replace(`{${value.split("=")[0]}}`, value.split("=")[1]);
-        }
+          ? referrer.split("&").find((el) => el.includes(dynamicParams[i]))
+          : "";
+
+        const re1 = new RegExp(`\\(${dynamicParams[i]}\\)`, "gi");
+        const re2 = new RegExp(`\\{${dynamicParams[i]}\\}`, "gi");
+        mainLink = mainLink.replace(re1, value.split("=")[1] || "");
+        mainLink = mainLink.replace(re2, value.split("=")[1] || "");
       }
 
-
-
       if (referrer.includes("utm")) {
-        console.log('REMOVEE');
-        referrer = location.search
-                ? location.search
-                        .substring(1)
-                : "";
+        referrer = location.search ? location.search.substring(1) : "";
         localStorage.setItem("user-referrer", referrer);
-
 
         body = {
           utmSource: utmSource,
@@ -421,23 +414,22 @@
           },
           body: JSON.stringify(body),
         })
-                .then((res) => {
-                  if (!res.ok) {
-                    throw Error(res.status);
-                  }
-                  return res.json();
-                })
-                .then((responseBody) => {
-                  userId = responseBody.id;
-                })
-                .catch((e) => {
-                  console.log(e);
-                });
+          .then((res) => {
+            if (!res.ok) {
+              throw Error(res.status);
+            }
+            return res.json();
+          })
+          .then((responseBody) => {
+            userId = responseBody.id;
+          })
+          .catch((e) => {
+            console.log(e);
+          });
       }
 
       function redirect(type) {
         let redirectLink = mainLink;
-        return;
         if (userId) {
           fetch(
             `/rest/clients-app/v2/app-referers/${userId}/install-button-clicked`,
