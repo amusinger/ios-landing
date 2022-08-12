@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Установить приложение на iOS | zapis.kz - Zapis.kz</title>
+
+    <meta charset="utf-8" />
+
+    <meta
+      http-equiv="cache-control"
+      content="no-cache, must-revalidate, post-check=0, pre-check=0"
+    />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="pragma" content="no-cache" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="/" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://zapis.kz/assets/img/icons/favicon/16.png"
+      sizes="16x16"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://zapis.kz/assets/img/icons/favicon/32.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://zapis.kz/assets/img/icons/favicon/48.png"
+      sizes="48x48"
+    />
+
+    <link rel="apple-touch-icon"
+    href=https://zapis.kz/assets/img/sharing/apple-touch-icon.png">
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Мобильное приложение | zapis.kz" />
+    <meta
+      property="og:description"
+      content="Zapis.kz ❤️ ОНЛАЙН ЗАПИСЬ 24/7 в салоны красоты в Казахстане. ☑️Лучшие салоны красоты, стоматологии, центры и мастера в Казахстане. ☝Быстро и удобно!"
+    />
+    <meta
+      name="description"
+      content="Zapis.kz ❤️ ОНЛАЙН ЗАПИСЬ 24/7 в салоны красоты в Казахстане. ☑️Лучшие салоны красоты, стоматологии, центры и мастера в Казахстане. ☝Быстро и удобно!"
+    />
+
+    <meta property="og:locale" content="ru_KZ" />
+    <meta
+      property="og:image"
+      content="https://zapis.kz/assets/img/sharing/banner.png"
+    />
+
+    <meta
+      property="og:image"
+      content="https://zapis.kz/assets/img/sharing/logo.png"
+    />
+    <meta property="og:image:width" content="100" />
+    <meta property="og:image:height" content="100" />
+
+    <!-- Browser bar color -->
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="msapplication-navbutton-color" content="#ffffff" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- iOS safari banner -->
+    <meta name="apple-itunes-app" content="app-id=1310410749" />
+
+    <!-- Facebook  -->
+    <meta
+      name="facebook-domain-verification"
+      content="8mllrec9fc3k0iw5irpuwguf5hi4ti"
+    />
+
+    <!-- Google search console -->
+    <meta
+      name="google-site-verification"
+      content="-xUUCNOTLlXOFii3J5TU7Itkgh4j6zwwPByBbWpjuzQ"
+    />
+
+    <!-- Google chrome manifest file -->
+    <link rel="manifest" href="https://zapis.kz/assets/misc/manifest.json" />
+
+    <link rel="canonical" href="https://zapis.kz/app_ios" />
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-NPRLRSB");
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+
+  <style>
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ff8383;
+      background-image: linear-gradient(180deg, #ffffff 0%, #ff8383 100%);
+    }
+    .promo {
+      width: 768px;
+      max-width: 100%;
+      overflow: hidden;
+      z-index: 10;
+      position: relative;
+      height: 100%;
+      background-image: url("/app_ios/images/bg.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin: 0 auto;
+      color: #561211;
+    }
+
+    .promo__logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+      margin-top: min(7vh, 40px);
+    }
+
+    h1 {
+      display: block;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 24px;
+      color: #561211;
+      text-align: center;
+      margin: 0 auto;
+      margin-top: 33px;
+      max-width: 260px;
+      animation: 2s title-animation ease-out;
+    }
+
+    h3 {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+      text-align: center;
+      color: #561211;
+    }
+  
+    @keyframes title-animation {
+      0% {
+        opacity: 0;
+        transform: translateY(80%);
+      }
+      20% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+        transform: translateY(0%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0%);
+      }
+    }
+
+    .promo__btn-group {
+      display: flex;
+      justify-content: center;
+      column-gap: 8.24px;
+      height: 28px;
+      margin-bottom: 12px;
+      margin-top: 50px;
+    }
+    .promo__btn {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 10px;
+      text-align: center;
+      color: #ffffff;
+      background: linear-gradient(91.41deg, #fa5962 0%, #e3313b 100%);
+      border-radius: 10px;
+      width: 280px;
+      height: 44px;
+      border: none;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 24px;
+      margin: 0 auto;
+      text-decoration: none;
+    }
+
+    .promo__image {
+      margin: auto;
+      left: 0;
+      right: 0;
+      text-align: center;
+      z-index: -1;
+      position: absolute;
+      -webkit-animation-name: silde_image;
+      -webkit-animation-duration: 2s;
+      -webkit-animation-timing-function: ease;
+      -webkit-animation-iteration-count: 1;
+      -webkit-animation-direction: normal;
+      -webkit-animation-delay: 0;
+      -webkit-animation-play-state: running;
+      -webkit-animation-fill-mode: forwards;
+      max-height: 55%;
+    }
+
+    @-webkit-keyframes silde_image {
+      0% {
+        bottom: -800px;
+      }
+      100% {
+        bottom: -100px;
+      }
+    }
+  </style>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-NPRLRSB"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="promo">
+      <div class="promo__logo">
+        <picture>
+          <source type="image/webp" srcset="/app_ios/images/logo.webp" />
+          <source type="image/png" srcset="/app_ios/images/logo.png" />
+          <img
+            type="image/png"
+            class="promo__logo__image"
+            src="/app_ios/images/logo.png"
+            alt="Zapis.kz - онлайн запись в сфере красоты и здоровья в Казахстане"
+            width="169"
+            height="57"
+          />
+        </picture>
+      </div>
+      <h3 style="
+        width: 240px;
+        margin: 0 auto;">
+        Более <b>1 000</b> салонов красоты и барбершопов
+      </h3>
+      <h3 style="
+        margin: 24px auto;
+        width: 290px;">
+        Только реальные отзывы и фотографии
+      </h3>
+      <h3 style="
+        width: 290px;
+        margin: 0 auto;">
+        Скидки и акции на услуги
+      </h3>
+      <h1>Скачивай и записывайся онлайн в два клика</h1>
+
+      <div class="promo__btn-group">
+<!--        <img-->
+<!--          id="click_gp"-->
+<!--          onclick="redirect('android')"-->
+<!--          class="promo__image__phone"-->
+<!--          src="/images/google-play.png"-->
+<!--          alt="Приложение zapis для android"-->
+<!--          width="91.62"-->
+<!--          height="27.79"-->
+<!--        />-->
+
+        <img
+          id="click_as"
+          onclick="redirect('ios')"
+          class="promo__image__phone"
+          src="/app_ios/images/app-store.png"
+          alt="Приложение zapis для iOS"
+          width="82.35"
+          height="27.79"
+        />
+<!--        <img-->
+<!--          id="click_ag"-->
+<!--          onclick="redirect('huawei')"-->
+<!--          class="promo__image__phone"-->
+<!--          src="/images/huawei.png"-->
+<!--          alt="Приложение zapis для huawei"-->
+<!--          width="89.56"-->
+<!--          height="27.79"-->
+<!--        />-->
+      </div>
+      <button class="promo__btn" onclick="redirect('main')" id="mainLink">
+        <svg
+          id="click_main_icon_1"
+          width="19"
+          height="19"
+          viewBox="0 0 19 19"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            id="click_main_icon"
+            d="M14.5 18.7941H4.49999C3.43162 18.7941 2.42714 18.3781 1.67159 17.6225C0.916078 16.8671 0.5 15.8625 0.5 14.7941V13.7941C0.5 13.2418 0.947692 12.794 1.50001 12.794C2.05232 12.794 2.50001 13.2418 2.50001 13.7941V14.7941C2.50001 15.3283 2.70807 15.8305 3.08576 16.2083C3.46355 16.586 3.96577 16.7941 4.49999 16.7941H14.5C15.0342 16.7941 15.5364 16.586 15.9141 16.2083C16.2919 15.8305 16.5 15.3283 16.5 14.7941V13.7941C16.5 13.2418 16.9477 12.794 17.5 12.794C18.0522 12.794 18.5 13.2418 18.5 13.7941V14.7941C18.5 15.8625 18.0839 16.8669 17.3284 17.6225C16.5728 18.3781 15.5683 18.7941 14.5 18.7941ZM9.49998 14.7941C9.36165 14.7941 9.22996 14.766 9.11014 14.7152C8.99836 14.668 8.89331 14.5994 8.80141 14.5097C8.80137 14.5096 8.80137 14.5096 8.80134 14.5096C8.80067 14.509 8.80001 14.5083 8.79935 14.5076C8.79917 14.5075 8.79896 14.5072 8.79879 14.5071C8.79823 14.5066 8.79774 14.5061 8.79721 14.5055C8.79687 14.5052 8.79655 14.5049 8.7962 14.5045C8.79585 14.5042 8.7954 14.5037 8.79508 14.5034C8.79439 14.5027 8.79362 14.502 8.79292 14.5013L4.7929 10.5012C4.40239 10.1107 4.40239 9.47752 4.7929 9.08698C5.1834 8.69647 5.81662 8.69643 6.20713 9.08698L8.50001 11.3799V1.79413C8.49998 1.24182 8.94767 0.794128 9.49998 0.794128C10.0523 0.794128 10.5 1.24182 10.5 1.79413V11.3798L12.7929 9.08698C13.1833 8.69647 13.8166 8.69647 14.2071 9.08698C14.5976 9.47748 14.5976 10.1107 14.2071 10.5012L10.2071 14.5012C10.2064 14.5019 10.2056 14.5027 10.2049 14.5034C10.2045 14.5037 10.2041 14.5042 10.2038 14.5044C10.2034 14.5048 10.2031 14.5051 10.2028 14.5055C10.2023 14.506 10.2017 14.5065 10.2012 14.507C10.2011 14.5072 10.2008 14.5074 10.2007 14.5076C10.2 14.5082 10.1994 14.5089 10.1987 14.5095C10.1987 14.5095 10.1987 14.5095 10.1986 14.5096C10.1876 14.5203 10.1765 14.5307 10.1651 14.5408C10.0814 14.6155 9.98809 14.6738 9.88948 14.7153C9.88913 14.7155 9.88885 14.7156 9.8885 14.7158C9.88811 14.7159 9.8878 14.7161 9.88742 14.7162C9.76823 14.7664 9.63737 14.7941 9.49998 14.7941V14.7941Z"
+            fill="white"
+          />
+        </svg>
+        <span id="click_main_text">Установить</span>
+      </button>
+      <div class="promo__image">
+        <picture>
+          <source type="image/webp" srcset="/app_ios/images/mobile.webp" />
+          <source type="image/png" srcset="/app_ios/images/mobile.png" />
+          <img
+            type="image/png"
+            width="380"
+            height="470"
+            src="/app_ios/images/mobile.png"
+            alt="Записаться в салон онлайн"
+          />
+        </picture>
+      </div>
+    </div>
+
+    <script>
+
+      let mainLink = 'https://app.appsflyer.com/id1310410749?pid=(utm_source)&af_siteid=zapis&c=(utm_campaign)&af_channel=(utm_source)&af_c_id={campaign_id}&af_adset={adset_name}&af_adset_id={adset_id}&af_ad={ad_name}&af_ad_id=(ad_id)&af_ad_type=(ad_type)&AGNCY=adexpert&af_click_lookback=7d&clickid={clickid}&advertising_id=(gclid)&os=(ios)';
+
+      deviceType = 'ios';
+      var body;
+      var userId;
+
+
+      let referrer = location.search;
+
+      const utmSource = referrer.includes("utm_source")
+        ? referrer
+            .split("&")
+            .find((el) => el.includes("utm_source"))
+            .split("=")[1]
+        : "";
+      const utmMedium = referrer.includes("utm_medium")
+        ? referrer
+            .split("&")
+            .find((el) => el.includes("utm_medium"))
+            .split("=")[1]
+        : "";
+      const utmCampaign = referrer.includes("utm_campaign")
+        ? referrer
+            .split("&")
+            .find((el) => el.includes("utm_campaign"))
+            .split("=")[1]
+        : "";
+      const utmContent = referrer.includes("utm_content")
+        ? referrer
+            .split("&")
+            .find((el) => el.includes("utm_content"))
+            .split("=")[1]
+        : "";
+      const utmTerm = referrer.includes("utm_term")
+        ? referrer
+            .split("&")
+            .find((el) => el.includes("utm_term"))
+            .split("=")[1]
+        : "";
+
+      const dynamicParams = ['utm_source', 'utm_campaign', 'campaign_id', 'adset_name', 'adset_id', 'ad_name', 'ad_id', 'ad_type', 'clickid', 'gclid', 'os'];
+      referrer = location.search.substring(1);
+      for (let i = 0; i < dynamicParams.length; i++) {
+        console.log(dynamicParams[i]);
+        const value = referrer.includes(dynamicParams[i])
+                ? referrer.split("&").find((el) => el.includes(dynamicParams[i]))
+                : "";
+        if (value && value.split("=").length) {
+          mainLink = mainLink.replace(`${value.split("=")[0]}`, value.split("=")[1]);
+          // mainLink = mainLink.replace(`{${value.split("=")[0]}}`, value.split("=")[1]);
+          // mainLink = mainLink.replace(`(${value.split("=")[0]})`, value.split("=")[1]);
+          mainLink = mainLink.replace(`{${value.split("=")[0]}}`, value.split("=")[1]);
+        }
+      }
+
+
+
+      if (referrer.includes("utm")) {
+        console.log('REMOVEE');
+        referrer = location.search
+                ? location.search
+                        .substring(1)
+                : "";
+        localStorage.setItem("user-referrer", referrer);
+
+
+        body = {
+          utmSource: utmSource,
+          utmMedium: utmMedium,
+          utmCampaign: utmCampaign,
+          utmContent: utmContent,
+          utmTerm: utmTerm,
+          appType: deviceType === "ios" ? deviceType.toUpperCase() : "ANDROID",
+        };
+
+        fetch("/rest/clients-app/v2/app-referers", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(body),
+        })
+                .then((res) => {
+                  if (!res.ok) {
+                    throw Error(res.status);
+                  }
+                  return res.json();
+                })
+                .then((responseBody) => {
+                  userId = responseBody.id;
+                })
+                .catch((e) => {
+                  console.log(e);
+                });
+      }
+
+      function redirect(type) {
+        let redirectLink = mainLink;
+        return;
+        if (userId) {
+          fetch(
+            `/rest/clients-app/v2/app-referers/${userId}/install-button-clicked`,
+            {
+              method: "PUT",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(body),
+            }
+          )
+            .then((res) => {
+              setTimeout(() => {
+                window.location.href = redirectLink;
+              });
+            })
+            .catch((e) => {
+              console.log(e);
+              setTimeout(() => {
+                window.location.href = redirectLink;
+              });
+            });
+        } else {
+          setTimeout(() => {
+            window.location.href = redirectLink;
+          });
+        }
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org/",
+        "@type": "Organization",
+        "name": "Zapis.kz",
+        "url": "https://zapis.kz/",
+        "logo": "https://zapis.kz/static/img/logo/logo.svg",
+        "sameAs": [
+          "https://www.facebook.com/zapis.kz/",
+          "https://www.instagram.com/zapis.kz/"
+        ]
+      }
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-100583379-2"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-100583379-2");
+    </script>
+
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+      );
+      fbq("init", "688608028178865");
+      fbq("track", "PageView");
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=688608028178865&ev=PageView&noscript=1"
+    /></noscript>
+  </body>
+</html>
